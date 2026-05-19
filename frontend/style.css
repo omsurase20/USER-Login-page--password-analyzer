@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #243bff, #090b1a 45%, #050510);
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.left-panel {
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h2 {
+  letter-spacing: 3px;
+}
+
+nav button {
+  background: transparent;
+  border: 1px solid #ffffff55;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: white;
+  color: #111;
+}
+
+.hero {
+  margin-top: 150px;
+  max-width: 600px;
+}
+
+.badge {
+  background: #ffffff18;
+  padding: 10px 18px;
+  border-radius: 30px;
+  color: #9ee7ff;
+}
+
+.hero h1 {
+  margin-top: 25px;
+  font-size: 58px;
+  line-height: 1.1;
+}
+
+.hero p {
+  margin-top: 20px;
+  color: #c9c9d8;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.features {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.features div {
+  background: #ffffff12;
+  padding: 16px;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.right-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+}
+
+.card {
+  display: none;
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff12;
+  border: 1px solid #ffffff24;
+  backdrop-filter: blur(25px);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 25px 70px #00000060;
+  animation: pop 0.35s ease;
+}
+
+.card.active {
+  display: block;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.sub-text {
+  color: #c9c9d8;
+  margin-bottom: 24px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 13px;
+  border: 1px solid #ffffff30;
+  border-radius: 16px;
+  background: #05051099;
+  color: white;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #6ae2ff;
+  box-shadow: 0 0 0 3px #6ae2ff22;
+}
+
+small {
+  display: block;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  color: #ffce7a;
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  padding-right: 55px;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.strength-area {
+  margin-bottom: 14px;
+}
+
+.strength-bar {
+  width: 100%;
+  height: 9px;
+  background: #ffffff25;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.strength-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+#strengthText {
+  font-size: 14px;
+  color: #dcdcff;
+}
+
+.rules {
+  list-style: none;
+  margin-bottom: 18px;
+}
+
+.rules li {
+  font-size: 14px;
+  margin-bottom: 7px;
+  color: #ff8f8f;
+}
+
+.rules li.valid {
+  color: #81ffb0;
+}
+
+.suggestions {
+  background: #00000030;
+  padding: 14px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+}
+
+.suggestions p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #c9c9d8;
+}
+
+#passwordSuggestions button {
+  margin: 4px;
+  padding: 7px 10px;
+  border-radius: 20px;
+  border: none;
+  background: #6ae2ff;
+  color: #08111f;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.main-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 18px;
+  border: none;
+  background: linear-gradient(135deg, #6ae2ff, #7c5cff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px #6ae2ff44;
+}
+
+.switch-text {
+  margin-top: 18px;
+  text-align: center;
+  color: #c9c9d8;
+}
+
+.switch-text span {
+  color: #6ae2ff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 14px;
+  margin: 25px 0;
+}
+
+.dashboard-grid div {
+  background: #00000035;
+  padding: 18px;
+  border-radius: 18px;
+}
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .left-panel {
+    padding: 30px;
+  }
+
+  .hero {
+    margin-top: 70px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+}

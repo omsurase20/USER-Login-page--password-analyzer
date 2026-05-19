@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> USER-LOGIN PAGE | Password Strength Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app">
+    <section class="left-panel">
+      <nav>
+        <h2> USER-LOGIN PAGE </h2>
+        <button id="loginTopBtn">Login</button>
+      </nav>
+
+      <div class="hero">
+        <span class="badge">Secure Authentication System</span>
+        <h1>Password Strength Analyzer</h1>
+        <p>
+          Create a secure account with live password analysis, username validation,
+          password suggestions, recovery questions, and modern login protection.
+        </p>
+
+        <div class="features">
+          <div>✓ Live strength check</div>
+          <div>✓ Username validation</div>
+          <div>✓ Forgot password</div>
+          <div>✓ Old password prevention</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="right-panel">
+
+      <!-- SIGNUP FORM -->
+      <div class="card active" id="signupCard">
+        <h2>Create Account</h2>
+        <p class="sub-text">Join Thirnex with a secure password.</p>
+
+        <input type="text" id="signupUsername" placeholder="Username" />
+        <small id="usernameMsg"></small>
+
+        <input type="email" id="signupEmail" placeholder="Email address" />
+
+        <div class="password-box">
+          <input type="password" id="signupPassword" placeholder="Create password" />
+          <button type="button" class="eyeBtn" data-target="signupPassword">👁</button>
+        </div>
+
+        <div class="strength-area">
+          <div class="strength-bar">
+            <span id="strengthFill"></span>
+          </div>
+          <p id="strengthText">Password strength will appear here</p>
+        </div>
+
+        <ul class="rules">
+          <li id="ruleLength">✗ Minimum 8 characters</li>
+          <li id="ruleUpper">✗ One uppercase letter</li>
+          <li id="ruleLower">✗ One lowercase letter</li>
+          <li id="ruleNumber">✗ One number</li>
+          <li id="ruleSymbol">✗ One special symbol</li>
+          <li id="ruleUsername">✗ Should not contain username</li>
+        </ul>
+
+        <div class="suggestions">
+          <p>Strong password suggestions:</p>
+          <div id="passwordSuggestions"></div>
+        </div>
+
+        <div class="password-box">
+          <input type="password" id="confirmPassword" placeholder="Confirm password" />
+          <button type="button" class="eyeBtn" data-target="confirmPassword">👁</button>
+        </div>
+        <small id="matchMsg"></small>
+
+        <select id="question1">
+          <option value="birth">Where were you born?</option>
+        </select>
+        <input type="text" id="answer1" placeholder="Answer 1" />
+
+        <select id="question2">
+          <option value="friend">Who is your favourite friend?</option>
+        </select>
+        <input type="text" id="answer2" placeholder="Answer 2" />
+
+        <select id="question3">
+          <option value="teacher">Who is your favourite teacher?</option>
+        </select>
+        <input type="text" id="answer3" placeholder="Answer 3" />
+
+        <button class="main-btn" id="signupBtn">Sign Up</button>
+
+        <p class="switch-text">
+          Already have an account?
+          <span id="goLogin">Login</span>
+        </p>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <div class="card" id="loginCard">
+        <h2>Welcome Back</h2>
+        <p class="sub-text">Login to your Thirnex account.</p>
+
+        <input type="text" id="loginUser" placeholder="Username or Email" />
+
+        <div class="password-box">
+          <input type="password" id="loginPassword" placeholder="Password" />
+          <button type="button" class="eyeBtn" data-target="loginPassword">👁</button>
+        </div>
+
+        <button class="main-btn" id="loginBtn">Login</button>
+
+        <p class="switch-text">
+          <span id="forgotPassword">Forgot Password?</span>
+        </p>
+
+        <p class="switch-text">
+          New user?
+          <span id="goSignup">Create account</span>
+        </p>
+      </div>
+
+      <!-- FORGOT PASSWORD -->
+      <div class="card" id="forgotCard">
+        <h2>Reset Password</h2>
+        <p class="sub-text">Verify your security answers.</p>
+
+        <input type="text" id="forgotUsername" placeholder="Enter username" />
+        <button class="main-btn" id="findUserBtn">Find Account</button>
+
+        <div id="securitySection" class="hidden">
+          <input type="text" id="forgotAns1" placeholder="Where were you born?" />
+          <input type="text" id="forgotAns2" placeholder="Favourite friend?" />
+          <input type="text" id="forgotAns3" placeholder="Favourite teacher?" />
+
+          <div class="password-box">
+            <input type="password" id="newPassword" placeholder="New password" />
+            <button type="button" class="eyeBtn" data-target="newPassword">👁</button>
+          </div>
+
+          <button class="main-btn" id="resetBtn">Change Password</button>
+        </div>
+
+        <p class="switch-text">
+          Remember password?
+          <span id="backLogin">Login</span>
+        </p>
+      </div>
+
+      <!-- HOME PAGE -->
+      <div class="card home-card" id="homeCard">
+        <h2>Welcome to Thirnex</h2>
+        <p class="sub-text">Your account is secured successfully.</p>
+
+        <div class="dashboard-grid">
+          <div>🔐 Account Secure</div>
+          <div>📊 Password Checked</div>
+          <div>🛡 Login Verified</div>
+          <div>💡 Use strong passwords always</div>
+        </div>
+
+        <button class="main-btn" id="logoutBtn">Logout</button>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
